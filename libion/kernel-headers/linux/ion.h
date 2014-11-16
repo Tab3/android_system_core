@@ -59,6 +59,39 @@ struct ion_fd_data {
 struct ion_handle_data {
  ion_user_handle_t handle;
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define ION_BUFFER_TYPE_PHYS (1 << 0)
+#define ION_BUFFER_TYPE_DMA (1 << 1)
+struct ion_phys_data {
+ int fd;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ unsigned int addr;
+ unsigned int flags;
+};
+#define ION_BUFFER_UNKOWN 0
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define ION_BUFFER_DMA_VALID (1 << 0)
+#define ION_BUFFER_CPU_VALID (1 << 1)
+#define ION_BUFFER_NOTIFY_QUERY 0
+#define ION_BUFFER_NOTIFY_DMA_READ 1
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define ION_BUFFER_NOTIFY_DMA_WRITE 2
+#define ION_BUFFER_NOTIFY_CPU_READ 4
+#define ION_BUFFER_NOTIFY_CPU_WRITE 8
+#define ION_BUFFER_NOTIFY_VARIED 0xF
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+struct ion_notify_data {
+ int fd;
+ unsigned int note;
+};
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+struct ion_sync_range_data {
+ int fd;
+ unsigned int offset;
+ unsigned int size;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+ unsigned int note;
+};
 struct ion_custom_data {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
  unsigned int cmd;
@@ -74,5 +107,9 @@ struct ion_custom_data {
 #define ION_IOC_IMPORT _IOWR(ION_IOC_MAGIC, 5, struct ion_fd_data)
 #define ION_IOC_SYNC _IOWR(ION_IOC_MAGIC, 7, struct ion_fd_data)
 #define ION_IOC_CUSTOM _IOWR(ION_IOC_MAGIC, 6, struct ion_custom_data)
+#define ION_IOC_PHYS _IOWR(ION_IOC_MAGIC, 9, struct ion_phys_data)
+#define ION_IOC_NOTIFY _IOWR(ION_IOC_MAGIC, 10, struct ion_notify_data)
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define ION_IOC_SYNC_RANGE _IOWR(ION_IOC_MAGIC, 11, struct ion_sync_range_data)
 #endif
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
