@@ -40,6 +40,11 @@ commonSources := \
 	iosched_policy.c \
 	str_parms.c \
 
+ifeq ($(BOARD_USES_LEGACY_LIST),true)
+commonSources += \
+	legacy-list.c
+endif
+
 # some files must not be compiled when building against Mingw
 # they correspond to features not used by our host development tools
 # which are also hard or even impossible to port to native Win32
